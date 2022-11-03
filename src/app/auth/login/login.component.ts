@@ -41,7 +41,9 @@ export class LoginComponent implements OnInit {
       this.loginService.loginUser(this.loginDetails).subscribe((resp)=>{
         this.spin.hide()
         if(resp.status == 200){
-          Swal.fire("Success",`${resp.data.firstName} logged in...`,"success")
+          console.log(resp);
+          Swal.fire("Success",`User logged in...`,"success")
+          sessionStorage.setItem("bearer" , resp.token)
           this.router.navigateByUrl("/signup")
         }else if(resp.status == 401){
           Swal.fire("Warning","Invalid Credentials Entered","error")
