@@ -2,6 +2,8 @@ import { Component, OnInit } from '@angular/core';
 import {ToastrService} from 'ngx-toastr'
 import { SignupService } from 'src/app/services/signup.service';
 import { NgxSpinnerService} from "ngx-spinner"
+import Swal from 'sweetalert2'
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-signup',
@@ -10,7 +12,8 @@ import { NgxSpinnerService} from "ngx-spinner"
 })
 export class SignupComponent implements OnInit {
 
-  constructor(private toastr: ToastrService , private signupService: SignupService, private spin : NgxSpinnerService)  { }
+  constructor(private toastr: ToastrService , private signupService: SignupService
+              , private spin : NgxSpinnerService,private router : Router )  { }
 
   ngOnInit(): void {
   }
@@ -67,9 +70,15 @@ export class SignupComponent implements OnInit {
     this.spin.show().then(()=>{
       this.signupService.signupUser(this.userDetails).subscribe((resp)=>{
         this.spin.hide()
-        this.toastr.warning(resp)
-        console.log(resp);
-        
+        if(resp.status == 200) {
+          Swal.fire("Success" , `Welcome ${this.userDetails.firstName}`,"success")
+          this.router.navigateByUrl("/login")
+        } else if(resp.status == 402) {
+          Swal.fire("Warning","User Already Exist","warning")
+          this.router.navigateByUrl("/login")
+        } else{
+          Swal.fire("Error","Please Try again after Sometime","error")
+        }
       })
     })
   }
