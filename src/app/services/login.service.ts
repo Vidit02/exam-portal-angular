@@ -6,11 +6,11 @@ import { environment } from 'src/environments/environment';
 @Injectable({
   providedIn: 'root'
 })
-export class SignupService {
-
+export class LoginService {
+  
   constructor(private httpClient:HttpClient) { }
 
-  signupUser(user:any):Observable<any>{
-    return this.httpClient.post(environment.url+"/auth/signup",user)
+  loginUser(user:any):Observable<any>{
+    return this.httpClient.post(environment.url+"/auth/login",user)
   }
 }

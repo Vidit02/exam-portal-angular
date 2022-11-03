@@ -12,8 +12,7 @@ import { Router } from '@angular/router';
 })
 export class SignupComponent implements OnInit {
 
-  constructor(private toastr: ToastrService , private signupService: SignupService
-              , private spin : NgxSpinnerService,private router : Router )  { }
+  constructor(private toastr: ToastrService , private signupService: SignupService,private spin : NgxSpinnerService,private router : Router )  { }
 
   ngOnInit(): void {
   }

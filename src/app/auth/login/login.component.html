@@ -16,6 +16,8 @@
           <div class="form-group position-relative has-icon-left mb-4">
             <input
               type="text"
+              [(ngModel)]="loginDetails.emailId"
+              name="emailId"
               class="form-control form-control-xl"
               placeholder="Username"
             />
@@ -26,6 +28,8 @@
           <div class="form-group position-relative has-icon-left mb-4">
             <input
               type="password"
+              [(ngModel)]="loginDetails.password"
+              name="password"
               class="form-control form-control-xl"
               placeholder="Password"
             />
@@ -37,7 +41,8 @@
             <input
               class="form-check-input me-2"
               type="checkbox"
-              value=""
+              name="rememberMe"
+              [(ngModel)]="rememberMe"
               id="flexCheckDefault"
             />
             <label
@@ -47,7 +52,7 @@
               Keep me logged in
             </label>
           </div>
-          <button class="btn btn-primary btn-block btn-lg shadow-lg mt-5">
+          <button class="btn btn-primary btn-block btn-lg shadow-lg mt-5" (click)="loginUser()">
             Log in
           </button>
         </form>
