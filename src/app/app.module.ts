@@ -11,10 +11,14 @@ import { ReactiveFormsModule } from '@angular/forms';
 import {BrowserAnimationsModule} from '@angular/platform-browser/animations'
 import {NgxSpinnerModule} from "ngx-spinner"
 import { AuthModule } from './auth/auth.module';
+import { DashboardComponent } from './dashboard/dashboard.component';
+import { authInterceptor } from './services/authInterceptor.interceptor';
+// import { reqInterceptor, ReqInterceptorInterceptor } from './services/req-interceptor.interceptor';
 
 @NgModule({
   declarations: [
-    AppComponent
+    AppComponent,
+    DashboardComponent
   ],
   imports: [
     BrowserModule,
@@ -26,7 +30,7 @@ import { AuthModule } from './auth/auth.module';
     ReactiveFormsModule,
     NgxSpinnerModule
   ],
-  providers: [],
+  providers: [authInterceptor],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

@@ -4,6 +4,7 @@ import { NgxSpinnerService} from "ngx-spinner"
 import Swal from 'sweetalert2'
 import { Router } from '@angular/router';
 import { LoginService } from 'src/app/services/login.service';
+import { UserService } from 'src/app/services/user.service';
 
 @Component({
   selector: 'app-login',
@@ -12,7 +13,7 @@ import { LoginService } from 'src/app/services/login.service';
 })
 export class LoginComponent implements OnInit {
 
-  constructor(private toastr: ToastrService , private loginService: LoginService,private spin : NgxSpinnerService,private router : Router ) { }
+  constructor(private userService : UserService, private toastr: ToastrService , private loginService: LoginService,private spin : NgxSpinnerService,private router : Router ) { }
 
   ngOnInit(): void {
   }
@@ -43,8 +44,9 @@ export class LoginComponent implements OnInit {
         if(resp.status == 200){
           console.log(resp);
           Swal.fire("Success",`User logged in...`,"success")
-          sessionStorage.setItem("bearer" , resp.token)
-          this.router.navigateByUrl("/signup")
+          sessionStorage.setItem("authtoken" , resp.token)
+          this.router.navigateByUrl("/user")
+          this.userService.getToken()
         }else if(resp.status == 401){
           Swal.fire("Warning","Invalid Credentials Entered","error")
         } else{

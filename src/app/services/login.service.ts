@@ -10,7 +10,21 @@ export class LoginService {
   
   constructor(private httpClient:HttpClient) { }
 
+  //Method for login
   loginUser(user:any):Observable<any>{
     return this.httpClient.post(environment.url+"/auth/login",user)
+  }
+
+  //Method to get the token from session storage
+  // getToken(){
+  //   console.log(sessionStorage.setItem("new","Vidit"));
+  //   console.log(sessionStorage.getItem("new"));
+    
+  //   return sessionStorage.getItem("bearer")
+  // }
+
+  //Get Current user
+  getCurrentUser(){
+   return this.httpClient.get(environment.userurl+"/userdetails");
   }
 }
