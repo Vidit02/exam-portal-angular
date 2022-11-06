@@ -4,21 +4,22 @@ import { Observable } from 'rxjs';
 import { LoginService } from './login.service';
 import { UserService } from './user.service';
 import { ToastrService } from "ngx-toastr"
+import { AdminService } from './admin.service';
 
 @Injectable({
   providedIn: 'root'
 })
-export class UserGuardGuard implements CanActivate {
-  constructor(private loginService: LoginService , private router: Router,private userService : UserService,private toastr : ToastrService){
+export class AdminGuardGuard implements CanActivate {
+  constructor(private loginService: LoginService , private router: Router,private adminService :AdminService,private toastr : ToastrService){}
 
-  }
   canActivate(
     route: ActivatedRouteSnapshot,
     state: RouterStateSnapshot): Observable<boolean | UrlTree> | Promise<boolean | UrlTree> | boolean | UrlTree {
-      if(this.userService.getToken() != "" && this.userService.getToken() !=null){
-        console.log("user guard called");
-        this.userService.getCurrentUser().subscribe((res)=>{
-          if(res.status == 200 && res.user.role === 'user') {
+      if(this.adminService.getToken() != "" && this.adminService.getToken() !=null){
+        this.adminService.getCurrentAdmin().subscribe((res)=>{
+          console.log(res);
+          
+          if(res.status == 200 && res.user.role.roleName === 'admin') {
             return true
           } else{
             this.loginService.logOutUser()

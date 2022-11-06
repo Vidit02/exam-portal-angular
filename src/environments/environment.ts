@@ -5,7 +5,8 @@
 export const environment = {
   production: false,
   url:"http://localhost:9898",
-  userurl:"http://localhost:9898/user"
+  userurl:"http://localhost:9898/user",
+  adminurl : "http://localhost:9898/admin"
 };
 
 /*

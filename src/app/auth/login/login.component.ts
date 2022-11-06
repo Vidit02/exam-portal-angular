@@ -45,7 +45,11 @@ export class LoginComponent implements OnInit {
           console.log(resp);
           Swal.fire("Success",`User logged in...`,"success")
           sessionStorage.setItem("bearer" , resp.token)
-          this.router.navigateByUrl("/user")
+          if(resp.role.roleName === "admin"){
+            this.router.navigateByUrl("/admin")
+          } else {
+            this.router.navigateByUrl("/user")
+          }
           this.userService.getCurrentUser().subscribe((res)=>{
           console.log(res);  
           })
