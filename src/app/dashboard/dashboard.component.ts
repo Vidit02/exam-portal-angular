@@ -17,7 +17,10 @@ export class DashboardComponent implements OnInit {
   clickme(){
     console.log("button clicked");
     
-    console.log(sessionStorage.getItem("authtoken"));
+    this.userService.getCurrentUser().subscribe((resp)=>{
+      console.log(resp);
+      
+    })
     
   }
 }

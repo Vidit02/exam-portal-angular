@@ -44,9 +44,11 @@ export class LoginComponent implements OnInit {
         if(resp.status == 200){
           console.log(resp);
           Swal.fire("Success",`User logged in...`,"success")
-          sessionStorage.setItem("authtoken" , resp.token)
+          sessionStorage.setItem("bearer" , resp.token)
           this.router.navigateByUrl("/user")
-          this.userService.getToken()
+          this.userService.getCurrentUser().subscribe((res)=>{
+          console.log(res);  
+          })
         }else if(resp.status == 401){
           Swal.fire("Warning","Invalid Credentials Entered","error")
         } else{

@@ -2,6 +2,7 @@ import { Injectable } from '@angular/core';
 import {HttpClient} from '@angular/common/http';
 import { Observable } from 'rxjs';
 import { environment } from 'src/environments/environment';
+import Swal from "sweetalert2"
 
 @Injectable({
   providedIn: 'root'
@@ -24,7 +25,13 @@ export class LoginService {
   // }
 
   //Get Current user
-  getCurrentUser(){
-   return this.httpClient.get(environment.userurl+"/userdetails");
+  // getCurrentUser(){
+  //  return this.httpClient.get(environment.userurl+"/userdetails");
+  // }
+
+  logOutUser(){
+    sessionStorage.clear()
+    Swal.fire("Success","Logged Out Successfully","success")
+    return true
   }
 }
