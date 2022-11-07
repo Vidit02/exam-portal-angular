@@ -5,6 +5,8 @@ import { HomeComponent } from './home/home.component';
 import { NewCategoryComponent } from './new-category/new-category.component';
 import { RouterModule } from '@angular/router';
 import { FormsModule,NgModel, ReactiveFormsModule } from '@angular/forms';
+import { ListCategoriesComponent } from './list-categories/list-categories.component';
+import { EditCategoryComponent } from './edit-category/edit-category.component';
 
 
 
@@ -12,7 +14,9 @@ import { FormsModule,NgModel, ReactiveFormsModule } from '@angular/forms';
   declarations: [
     SidebarComponent,
     HomeComponent,
-    NewCategoryComponent
+    NewCategoryComponent,
+    ListCategoriesComponent,
+    EditCategoryComponent
   ],
   imports: [
     CommonModule,
@@ -22,7 +26,8 @@ import { FormsModule,NgModel, ReactiveFormsModule } from '@angular/forms';
   ],
   exports : [
     SidebarComponent,
-    NewCategoryComponent
+    NewCategoryComponent,
+    ListCategoriesComponent
   ]
 })
 export class AdminDashModule { }

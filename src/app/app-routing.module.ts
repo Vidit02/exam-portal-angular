@@ -1,5 +1,7 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
+import { EditCategoryComponent } from './admin-dash/edit-category/edit-category.component';
+import { ListCategoriesComponent } from './admin-dash/list-categories/list-categories.component';
 import { NewCategoryComponent } from './admin-dash/new-category/new-category.component';
 import { SidebarComponent } from './admin-dash/sidebar/sidebar.component';
 import { AdmindashboardComponent } from './admindashboard/admindashboard.component';
@@ -47,6 +49,14 @@ const routes: Routes = [
       {
         "path" : "newcategory",
         "component" : NewCategoryComponent
+      },
+      {
+        "path" : "listcategory",
+        "component" : ListCategoriesComponent
+      },
+      {
+        "path" : "editcategory",
+        "component" : EditCategoryComponent
       }
     ]
   }

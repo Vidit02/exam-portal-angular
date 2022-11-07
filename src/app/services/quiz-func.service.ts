@@ -14,4 +14,17 @@ export class QuizFuncService {
   addCategory(category:any):Observable<any>{
     return this.httpClient.post(environment.adminurl + "/addcategory",category)
   }
+
+  //List all categories
+  listCategory():Observable<any>{
+    return this.httpClient.get(environment.adminurl + "/listcategory")
+  }
+  
+  //get category
+  getCategory(category:any):Observable<any>{
+    let obj = {
+      "title" : category
+    }
+    return this.httpClient.post(environment.adminurl + "/getcategory",obj)
+  }
 }
