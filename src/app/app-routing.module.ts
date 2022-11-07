@@ -1,12 +1,14 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
+import { NewCategoryComponent } from './admin-dash/new-category/new-category.component';
 import { SidebarComponent } from './admin-dash/sidebar/sidebar.component';
+import { AdmindashboardComponent } from './admindashboard/admindashboard.component';
 import { LoginComponent } from './auth/login/login.component';
 import { SignupComponent } from './auth/signup/signup.component';
-import { DashboardComponent } from './dashboard/dashboard.component';
 import { AdminGuardGuard } from './services/admin-guard.guard';
 import { UserGuardGuard } from './services/user-guard.guard';
 import { HomeComponent } from './user-dash/home/home.component';
+import { UserdashboardComponent } from './userdashboard/userdashboard.component';
 
 const routes: Routes = [
   {
@@ -23,7 +25,7 @@ const routes: Routes = [
   },
   {
     "path": "user",
-    "component": DashboardComponent,
+    "component": UserdashboardComponent,
     "canActivate": [UserGuardGuard],
     children: [
       {
@@ -35,12 +37,16 @@ const routes: Routes = [
   {
 
     "path": "admin",
-    "component": DashboardComponent,
+    "component": AdmindashboardComponent,
     "canActivate": [AdminGuardGuard],
     children: [
       {
         "path": "",
-        "component": SidebarComponent
+        "component": HomeComponent
+      },
+      {
+        "path" : "newcategory",
+        "component" : NewCategoryComponent
       }
     ]
   }

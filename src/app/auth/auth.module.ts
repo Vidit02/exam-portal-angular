@@ -9,6 +9,7 @@ import {HttpClientModule} from "@angular/common/http"
 import { FormsModule,NgModel, ReactiveFormsModule } from '@angular/forms';
 import {NgxSpinnerModule} from "ngx-spinner"
 import {BrowserAnimationsModule} from '@angular/platform-browser/animations'
+import { SidebarComponent } from '../admin-dash/sidebar/sidebar.component';
 
 
 @NgModule({

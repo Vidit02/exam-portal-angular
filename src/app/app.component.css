@@ -1,0 +1,140 @@
+#sidebar.active .sidebar-wrapper {
+    left: 0;
+  }
+  #sidebar:not(.active) .sidebar-wrapper {
+    left: -300px;
+  }
+  #sidebar:not(.active) ~ #main {
+    margin-left: 0;
+  }
+  .sidebar-wrapper {
+    background-color: #fff;
+    bottom: 0;
+    height: 100vh;
+    overflow-y: auto;
+    position: fixed;
+    top: 0;
+    transition: left 0.5s ease-out;
+    width: 300px;
+    z-index: 10;
+  }
+  .sidebar-wrapper .sidebar-header {
+    font-size: 2rem;
+    font-weight: 700;
+    padding: 2rem 2rem 1rem;
+  }
+  .sidebar-wrapper .sidebar-header img {
+    height: 1.2rem;
+  }
+  .sidebar-wrapper .sidebar-toggler.x {
+    display: none;
+    position: absolute;
+    right: 1.75rem;
+    top: 0.25rem;
+  }
+  .sidebar-wrapper .menu {
+    font-weight: 600;
+    margin-top: 2rem;
+    padding: 0 2rem;
+  }
+  .sidebar-wrapper .menu .sidebar-title {
+    color: #25396f;
+    font-size: 1rem;
+    font-weight: 600;
+    list-style: none;
+    margin: 1.5rem 0 1rem;
+    padding: 0 1rem;
+  }
+  .sidebar-wrapper .menu .sidebar-link {
+    align-items: center;
+    border-radius: 0.5rem;
+    color: #25396f;
+    display: block;
+    display: flex;
+    font-size: 1rem;
+    padding: 0.7rem 1rem;
+    text-decoration: none;
+    transition: all 0.5s;
+  }
+  .sidebar-wrapper .menu .sidebar-link i,
+  .sidebar-wrapper .menu .sidebar-link svg {
+    color: #7c8db5;
+  }
+  .sidebar-wrapper .menu .sidebar-link i:before {
+    vertical-align: top;
+  }
+  .sidebar-wrapper .menu .sidebar-link span {
+    margin-left: 1rem;
+  }
+  .sidebar-wrapper .menu .sidebar-link:hover {
+    background-color: #f0f1f5;
+  }
+  .sidebar-wrapper .menu .sidebar-item {
+    list-style: none;
+    margin-top: 0.5rem;
+    position: relative;
+  }
+  .sidebar-wrapper .menu .sidebar-item.has-sub .sidebar-link:after {
+    color: #ccc;
+    content: url('data:image/svg+xml;charset=utf-8,<svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-chevron-down"><path style="fill:none;stroke:gray;stroke-width:1" d="m6 9 6 6 6-6"/></svg>');
+    display: block;
+    position: absolute;
+    right: 15px;
+    top: 12px;
+  }
+  .sidebar-wrapper .menu .sidebar-item.active.has-sub .sidebar-link:after {
+    content: url('data:image/svg+xml;charset=utf-8,<svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-chevron-down"><path style="fill:none;stroke:%23fff;stroke-width:1" d="m6 9 6 6 6-6"/></svg>');
+  }
+  .sidebar-wrapper .menu .sidebar-item.active > .sidebar-link {
+    background-color: #435ebe;
+  }
+  .sidebar-wrapper .menu .sidebar-item.active > .sidebar-link span {
+    color: #fff;
+  }
+  .sidebar-wrapper .menu .sidebar-item.active > .sidebar-link i,
+  .sidebar-wrapper .menu .sidebar-item.active > .sidebar-link svg {
+    fill: #fff;
+    color: #fff;
+  }
+  .sidebar-wrapper .menu .sidebar-item.active > .sidebar-link.has-sub:after {
+    content: url('data:image/svg+xml;charset=utf-8,<svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-chevron-down"><path style="fill:none;stroke:%23fff;stroke-width:1" d="m6 9 6 6 6-6"/></svg>');
+  }
+  .sidebar-wrapper .menu .submenu {
+    display: none;
+    list-style: none;
+    overflow: hidden;
+    transition: max-height 2s cubic-bezier(0, 0.55, 0.45, 1);
+  }
+  .sidebar-wrapper .menu .submenu.active {
+    display: block;
+    max-height: 999px;
+  }
+  .sidebar-wrapper .menu .submenu .submenu-item.active {
+    position: relative;
+  }
+  .sidebar-wrapper .menu .submenu .submenu-item.active > a {
+    color: #435ebe;
+    font-weight: 700;
+  }
+  .sidebar-wrapper .menu .submenu .submenu-item a {
+    color: #25396f;
+    display: block;
+    font-size: 0.85rem;
+    font-weight: 600;
+    letter-spacing: 0.5px;
+    padding: 0.7rem 2rem;
+    transition: all 0.3s;
+  }
+  .sidebar-wrapper .menu .submenu .submenu-item a:hover {
+    color: #435ebe;
+    margin-left: 0.3rem;
+  }
+  .sidebar-backdrop {
+    background-color: rgba(0, 0, 0, 0.5);
+    height: 100%;
+    left: 0;
+    position: fixed;
+    top: 0;
+    width: 100%;
+    z-index: 9;
+  }
