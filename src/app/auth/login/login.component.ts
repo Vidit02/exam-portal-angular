@@ -31,7 +31,7 @@ export class LoginComponent implements OnInit {
     }
     if(this.loginDetails.emailId == "" || this.loginDetails.emailId.trim().length == 0){
       this.toastr.error("Please Enter Email")
-      return
+      return 
     }
     if(this.loginDetails.password == "" || this.loginDetails.password.trim().length == 0){
       this.toastr.error("Please Enter Password")

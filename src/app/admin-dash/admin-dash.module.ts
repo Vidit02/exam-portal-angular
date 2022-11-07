@@ -4,6 +4,7 @@ import { SidebarComponent } from './sidebar/sidebar.component';
 import { HomeComponent } from './home/home.component';
 import { NewCategoryComponent } from './new-category/new-category.component';
 import { RouterModule } from '@angular/router';
+import { FormsModule,NgModel, ReactiveFormsModule } from '@angular/forms';
 
 
 
@@ -15,7 +16,9 @@ import { RouterModule } from '@angular/router';
   ],
   imports: [
     CommonModule,
-    RouterModule
+    RouterModule,
+    FormsModule,
+    ReactiveFormsModule
   ],
   exports : [
     SidebarComponent,
