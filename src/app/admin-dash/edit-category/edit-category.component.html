@@ -26,7 +26,7 @@
               <div class="col-sm-12">
                   <h6>Category of Title</h6>
                   <div class="form-group position-relative has-icon-left">
-                      <input  type="text" class="form-control" [(ngModel)]="category.title" placeholder="Input New Category">
+                      <input  type="text" class="form-control" [(ngModel)]="category.title" placeholder="Input New Category" disabled="true">
                       <div class="form-control-icon">
                           <i class="bi bi-person"></i>
                       </div>
@@ -58,7 +58,7 @@
                   </div>
               </div>
               <div class="col-sm-12 mt-3">
-                  <button type="submit" class="btn btn-primary">Add Category</button>
+                  <button type="submit" (click)="editCategory()" class="btn btn-primary">Add Category</button>
               </div>
               
           </div>

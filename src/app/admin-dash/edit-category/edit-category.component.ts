@@ -35,4 +35,18 @@ export class EditCategoryComponent implements OnInit {
     }
   }
 
+  editCategory() {
+    this.spin.show().then(()=>{
+      this.quizService.updateCategory(this.category).subscribe((resp)=>{
+        this.spin.hide()
+        if(resp.status == 200){
+          Swal.fire("Success","Category Updated","success")
+          this.router.navigateByUrl("/admin/listcategory")
+        } else {
+          Swal.fire("Error","Something is Wrong","error")
+        }
+      })
+    })
+  }
+
 }

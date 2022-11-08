@@ -27,4 +27,9 @@ export class QuizFuncService {
     }
     return this.httpClient.post(environment.adminurl + "/getcategory",obj)
   }
+
+  //update category
+  updateCategory(category:any):Observable<any>{
+    return this.httpClient.post(environment.adminurl+"/updatecategory",category)
+  }
 }
