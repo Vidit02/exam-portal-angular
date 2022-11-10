@@ -32,4 +32,10 @@ export class QuizFuncService {
   updateCategory(category:any):Observable<any>{
     return this.httpClient.post(environment.adminurl+"/updatecategory",category)
   }
+
+  //delete category
+  deleteCategory(category : any):Observable<any>{
+    console.log(category);
+    return this.httpClient.post(environment.adminurl+"/deletecategory",category)
+  }
 }

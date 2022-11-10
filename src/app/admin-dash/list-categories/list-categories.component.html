@@ -41,7 +41,7 @@
                                             <td>{{c.description}}</td>
                                             <td class="text-bold-500">{{c.type}}</td>
                                             <td><button class="btn btn-outline-info" (click)="updateCategory(c.title)">Edit Category</button></td>
-                                            <td><button class="btn btn-outline-danger">Delete Category</button></td>
+                                            <td><button class="btn btn-outline-danger" (click)="deleteCategory(c.title)">Delete Category</button></td>
                                         </tr>
                                     </tbody>
                                 </table>

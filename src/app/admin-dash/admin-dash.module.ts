@@ -7,6 +7,7 @@ import { RouterModule } from '@angular/router';
 import { FormsModule,NgModel, ReactiveFormsModule } from '@angular/forms';
 import { ListCategoriesComponent } from './list-categories/list-categories.component';
 import { EditCategoryComponent } from './edit-category/edit-category.component';
+import { AddQuizComponent } from './add-quiz/add-quiz.component';
 
 
 
@@ -16,7 +17,8 @@ import { EditCategoryComponent } from './edit-category/edit-category.component';
     HomeComponent,
     NewCategoryComponent,
     ListCategoriesComponent,
-    EditCategoryComponent
+    EditCategoryComponent,
+    AddQuizComponent
   ],
   imports: [
     CommonModule,

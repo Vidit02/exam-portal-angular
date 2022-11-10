@@ -40,6 +40,7 @@ export class NewCategoryComponent implements OnInit {
         this.spin.hide()
         if(resp.status == 200){
           Swal.fire("Success","Category Added","success")
+          this.router.navigateByUrl("/admin/listcategory")
         } else if(resp.status == 401){
           Swal.fire("Error","Enter All details","error")
         } else if(resp.status == 402){
