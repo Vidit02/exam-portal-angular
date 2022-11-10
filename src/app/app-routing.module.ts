@@ -1,8 +1,11 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
+import { AddQuestionComponent } from './admin-dash/add-question/add-question.component';
+import { AddQuizComponent } from './admin-dash/add-quiz/add-quiz.component';
 import { EditCategoryComponent } from './admin-dash/edit-category/edit-category.component';
 import { ListCategoriesComponent } from './admin-dash/list-categories/list-categories.component';
 import { NewCategoryComponent } from './admin-dash/new-category/new-category.component';
+import { ShowCategoryComponent } from './admin-dash/show-category/show-category.component';
 import { SidebarComponent } from './admin-dash/sidebar/sidebar.component';
 import { AdmindashboardComponent } from './admindashboard/admindashboard.component';
 import { LoginComponent } from './auth/login/login.component';
@@ -57,6 +60,18 @@ const routes: Routes = [
       {
         "path" : "editcategory",
         "component" : EditCategoryComponent
+      },
+      {
+        "path" : "addquiz",
+        "component" : AddQuizComponent
+      },
+      {
+        "path" : "showcategory",
+        "component" : ShowCategoryComponent
+      },
+      {
+        "path" : "addquestion",
+        "component" : AddQuestionComponent
       }
     ]
   }

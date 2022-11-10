@@ -70,4 +70,9 @@ export class ListCategoriesComponent implements OnInit {
     })
   }
 
+  showCategory(title : any) {
+    sessionStorage.setItem("title",title)
+    this.router.navigateByUrl("/admin/showcategory")
+  }
+
 }

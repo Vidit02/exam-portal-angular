@@ -8,6 +8,8 @@ import { FormsModule,NgModel, ReactiveFormsModule } from '@angular/forms';
 import { ListCategoriesComponent } from './list-categories/list-categories.component';
 import { EditCategoryComponent } from './edit-category/edit-category.component';
 import { AddQuizComponent } from './add-quiz/add-quiz.component';
+import { ShowCategoryComponent } from './show-category/show-category.component';
+import { AddQuestionComponent } from './add-question/add-question.component';
 
 
 
@@ -18,7 +20,9 @@ import { AddQuizComponent } from './add-quiz/add-quiz.component';
     NewCategoryComponent,
     ListCategoriesComponent,
     EditCategoryComponent,
-    AddQuizComponent
+    AddQuizComponent,
+    ShowCategoryComponent,
+    AddQuestionComponent
   ],
   imports: [
     CommonModule,
@@ -29,7 +33,10 @@ import { AddQuizComponent } from './add-quiz/add-quiz.component';
   exports : [
     SidebarComponent,
     NewCategoryComponent,
-    ListCategoriesComponent
+    ListCategoriesComponent,
+    AddQuizComponent,
+    ShowCategoryComponent,
+    AddQuestionComponent
   ]
 })
 export class AdminDashModule { }

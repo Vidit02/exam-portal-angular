@@ -33,15 +33,17 @@
                                             <th>Type</th>
                                             <th>Edit Details</th>
                                             <th>Delete Category</th>
+                                            <th>Show Category</th>
                                         </tr>
                                     </thead>
                                     <tbody>
-                                        <tr *ngFor="let c of allCategories">
+                                        <tr *ngFor="let c of allCategories" >
                                             <td class="text-bold-500">{{c.title}}</td>
                                             <td>{{c.description}}</td>
                                             <td class="text-bold-500">{{c.type}}</td>
-                                            <td><button class="btn btn-outline-info" (click)="updateCategory(c.title)">Edit Category</button></td>
-                                            <td><button class="btn btn-outline-danger" (click)="deleteCategory(c.title)">Delete Category</button></td>
+                                            <td><button class="btn btn-outline-info" (click)="updateCategory(c.title)">Edit</button></td>
+                                            <td><button class="btn btn-outline-danger" (click)="deleteCategory(c.title)">Delete </button></td>
+                                            <td><button class="btn btn-outline-primary" (click)="showCategory(c.title)">Show</button></td>
                                         </tr>
                                     </tbody>
                                 </table>
