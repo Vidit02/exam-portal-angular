@@ -25,13 +25,10 @@
             "styles": [
               "src/styles.css",
               "node_modules/ngx-toastr/toastr.css",
-              "node_modules/ngx-spinner/animations/square-jelly-box.css",
-              "src/assets/css/pages/quill.css"
+              "node_modules/ngx-spinner/animations/square-jelly-box.css"
             ],
             "scripts": [
-              "src/assets/js/app.js",
-              "src/assets/js/extensions/quill.js",
-              "src/assets/js/pages/quill.js"
+              "src/assets/js/app.js"
             ]
           },
           "configurations": {

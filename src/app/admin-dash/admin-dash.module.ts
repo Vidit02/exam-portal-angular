@@ -12,7 +12,6 @@ import { ShowCategoryComponent } from './show-category/show-category.component';
 import { AddQuestionComponent } from './add-question/add-question.component';
 
 
-
 @NgModule({
   declarations: [
     SidebarComponent,
