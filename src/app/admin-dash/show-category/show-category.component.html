@@ -22,26 +22,26 @@
     </div>
     <section class="section">
         <div class="row">
-            <div class="col-12">
+            <div class="col-12" *ngFor="let q of questions">
                 <div class="card">
                     <div class="card-header">
-                        <h5 class="card-title">Q 1. What is system.out.println ? </h5>
+                        <h5 class="card-title">Q 1. {{q.question}} ? </h5>
                         <p class="float-start float-lg-end">Marks : 2 </p>
                     </div>
                     <div class="card-body">
                         <div class="row">
-                            <p class="col-md-4">A) System printing</p>
-                            <p class="col-md-4">A) System printing</p>
+                            <p class="col-md-4">A) {{q.optionA}}</p>
+                            <p class="col-md-4">B) {{q.optionB}}</p>
                             <button class="btn btn-outline-info col-md-2">Edit Question </button>
                         </div>
                         <div class="row mt-1">
-                            <p class="col-md-4">A) System printing</p>
-                            <p class="col-md-4">A) System printing</p>
+                            <p class="col-md-4">C) {{q.optionC}}</p>
+                            <p class="col-md-4">D) {{q.optionD}}</p>
                             <button class="btn btn-outline-danger col-md-2">Delete Question </button>
                         </div>
                     </div>  
                     <div class="card-footer">
-                        <p>Ans. A) System Printing</p>
+                        <p>Ans. {{q.correctAns}}</p>
                     </div>
                 </div>
             </div>
