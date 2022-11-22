@@ -17,7 +17,7 @@ export class ShowCategoryComponent implements OnInit {
 
   category : any = {}
   questions : any = {}
-   
+  numquestion : any = Number
 
   ngOnInit(): void {
     let title = sessionStorage.getItem("title")
@@ -43,12 +43,22 @@ export class ShowCategoryComponent implements OnInit {
         this.questionService.showQuestions(categoryId).subscribe((resp)=>{
           if(resp.status == 200){
             this.spin.hide()
-            console.log(resp);
             this.questions = resp.data
           } else {
             this.spin.hide()
             console.log("error log" , resp);
-            
+            this.toastr.error("Something is wrong")
+            this.router.navigateByUrl("/admin/listcategory")
+          }
+        })
+      })
+      this.spin.show().then(()=>{
+        this.quizService.getNumberOfQuestions(categoryId).subscribe((resp)=>{
+          if(resp.status == 200){
+            this.spin.hide()
+            this.numquestion = resp.data
+          } else {
+            this.spin.hide()
             this.toastr.error("Something is wrong")
             this.router.navigateByUrl("/admin/listcategory")
           }

@@ -38,4 +38,12 @@ export class QuizFuncService {
     console.log(category);
     return this.httpClient.post(environment.adminurl+"/deletecategory",category)
   }
+
+  //Number of questions in a category
+  getNumberOfQuestions(category : any) : Observable<any>{
+    const titlobj = {
+      "categoryId" : category
+    }
+    return this.httpClient.post(environment.adminurl+"/getnumber",titlobj)
+  }
 }
