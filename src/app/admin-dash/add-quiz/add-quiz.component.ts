@@ -7,9 +7,17 @@ import { Component, OnInit } from '@angular/core';
 })
 export class AddQuizComponent implements OnInit {
 
+  sections : Number[]  = [] 
   constructor() { }
 
   ngOnInit(): void {
   }
 
+  addSection(){
+    this.sections.push(this.sections.length)
+  }
+
+  deleteSection(){
+    this.sections.pop();
+  }
 }
