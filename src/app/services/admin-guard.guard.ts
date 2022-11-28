@@ -17,8 +17,6 @@ export class AdminGuardGuard implements CanActivate {
     state: RouterStateSnapshot): Observable<boolean | UrlTree> | Promise<boolean | UrlTree> | boolean | UrlTree {
       if(this.adminService.getToken() != "" && this.adminService.getToken() !=null){
         this.adminService.getCurrentAdmin().subscribe((res)=>{
-          console.log(res);
-          
           if(res.status == 200 && res.user.role.roleName === 'admin') {
             return true
           } else{

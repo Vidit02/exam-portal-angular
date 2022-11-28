@@ -12,7 +12,7 @@ export class AuthReqInterceptor implements HttpInterceptor{
         const bearer = this.userService.getToken()
         let request = req
         if(bearer!= null && bearer!= ""){
-            console.log("Bearer ",bearer);
+            // console.log("Bearer ",bearer);
             
             request = request.clone({setHeaders:{Authorization:`${bearer}`}})
         }

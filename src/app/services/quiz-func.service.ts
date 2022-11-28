@@ -46,4 +46,9 @@ export class QuizFuncService {
     }
     return this.httpClient.post(environment.adminurl+"/getnumber",titlobj)
   }
+
+  //List only titles of category
+  getTitlesOfCategory() : Observable<any>{
+    return this.httpClient.get(environment.adminurl+"/gettitlelist")
+  }
 }
