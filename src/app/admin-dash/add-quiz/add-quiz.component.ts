@@ -4,6 +4,7 @@ import { NgxSpinnerService } from 'ngx-spinner';
 import { ToastrService } from 'ngx-toastr';
 import { QuestionFuncService } from 'src/app/services/question-func.service';
 import { QuizFuncService } from 'src/app/services/quiz-func.service';
+import { QuizService } from 'src/app/services/quiz.service';
 import Swal from 'sweetalert2';
 
 @Component({
@@ -26,7 +27,7 @@ export class AddQuizComponent implements OnInit {
   category: string[] = []
   numofque: number[] = []
   public respCategory = "";
-  constructor(private categoryService: QuizFuncService, private toastr: ToastrService, private questionService: QuestionFuncService, private spin: NgxSpinnerService, private router: Router) { }
+  constructor( private quizService : QuizService , private categoryService: QuizFuncService, private toastr: ToastrService, private questionService: QuestionFuncService, private spin: NgxSpinnerService, private router: Router) { }
 
   ngOnInit(): void {
     this.getCategory();
@@ -93,6 +94,20 @@ export class AddQuizComponent implements OnInit {
     if(this.quiz.sectionnum.length == 0){
       this.toastr.error("Please Enter 1 ")
     }
-    
+    this.spin.show().then(()=>{
+      this.quizService.addQuiz(this.quiz).subscribe((resp)=>{
+        this.spin.hide()
+        if(resp.status == 200){
+          Swal.fire("Success","Quiz Added","success")
+          this.router.navigateByUrl("/admin/listcategory")
+        } else if(resp.status == 401){
+          Swal.fire("Error","Enter all Details","error")
+        } else if(resp.status == 402){
+          Swal.fire("Info","Quiz Already Exist","info")
+        } else {
+          Swal.fire("Error","Try after sometime","error")
+        }
+      })
+    })
   }
 }
