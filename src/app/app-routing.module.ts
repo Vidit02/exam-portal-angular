@@ -4,6 +4,7 @@ import { AddQuestionComponent } from './admin-dash/add-question/add-question.com
 import { AddQuizComponent } from './admin-dash/add-quiz/add-quiz.component';
 import { EditCategoryComponent } from './admin-dash/edit-category/edit-category.component';
 import { ListCategoriesComponent } from './admin-dash/list-categories/list-categories.component';
+import { ListQuizComponent } from './admin-dash/list-quiz/list-quiz.component';
 import { NewCategoryComponent } from './admin-dash/new-category/new-category.component';
 import { ShowCategoryComponent } from './admin-dash/show-category/show-category.component';
 import { SidebarComponent } from './admin-dash/sidebar/sidebar.component';
@@ -72,6 +73,10 @@ const routes: Routes = [
       {
         "path" : "addquestion",
         "component" : AddQuestionComponent
+      },
+      {
+        "path" : "listquiz",
+        "component" : ListQuizComponent
       }
     ]
   }
