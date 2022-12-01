@@ -1,0 +1,74 @@
+<div class="page-heading">
+    <div class="page-title">
+      <div class="row">
+        <div class="col-12 col-md-6 order-md-1 order-last">
+          <h3>Edit Quiz</h3>
+          <p class="text-subtitle text-muted">
+              Edit quiz
+          </p>
+        </div>
+        <div class="col-12 col-md-6 order-md-2 order-first">
+          <nav aria-label="breadcrumb" class="breadcrumb-header float-start float-lg-end">
+              <ol class="breadcrumb">
+                  <li class="breadcrumb-item"><a href="index.html">Admin</a></li>
+                  <li class="breadcrumb-item active" aria-current="page">Quizzes</li>
+              </ol>
+          </nav>
+        </div>
+      </div>
+    </div>
+    <section class="section">
+      <div class="card">
+          <div class="card-header">
+              <h4 class="card-title">Edit Quiz</h4>
+          </div>
+          <div class="card-body">
+              <div class="col-sm-12">
+                  <h6>Title Of Quiz</h6>
+                  <div class="form-group position-relative has-icon-left">
+                      <input disabled="true"  type="text" class="form-control" placeholder="Input title of Quiz" [(ngModel)]="quizdetails.title">
+                      <div class="form-control-icon">
+                          <i class="bi bi-person"></i>
+                      </div>
+                  </div>
+                  <div class="col-sm-12">
+                      <h6>Quiz Description</h6>
+                      <div class="form-group position-relative has-icon-left">
+                          <textarea class="form-control" placeholder="Enter New Description" id="exampleFormControlTextarea1" [(ngModel)]="quizdetails.description" rows="2"></textarea>
+                          <div class="form-control-icon">
+                              <i class="bi bi-person"></i>
+                          </div>
+                      </div>
+                  </div>
+                  <h5>Add Section</h5>
+                  <div class="col-sm-12">
+                      <div class="card-body" *ngFor="let div of sections;let num = index" >
+                          <h6>Section {{num+1}}</h6>
+                          <div class="input-group mb-3 ">
+                              <label class="input-group-text" for="inputGroupSelect01">Select Title of Category &nbsp;</label>
+                              <select class="form-select" id="inputGroupSelect01" [(ngModel)]="category[num]">
+                                  <option selected>Choose...</option>
+                                  <option *ngFor="let item of allcategories;let n = index" value="{{item}}">{{item}}</option>
+                              </select>
+                          </div>
+                          <div class="input-group">
+                              <label class="input-group-text" for="">&nbsp; Number Of Questions &nbsp;&nbsp;</label>
+                              <input class="form-control" [(ngModel)]="numofque[num]" type="number" />
+                          </div>
+                      </div>
+                  </div>
+  
+                  <div class="col-sm-12 text-center">
+                      <button class="btn btn-info" style="margin-right: 1rem;" (click)="addSection()">Add Section</button>
+                      <button class="btn btn-danger" (click)="deleteSection()">Delete Section</button>
+                  </div>
+                  <div class="col-sm-12 text-center mt-4">
+                      <button class="btn btn-outline-success" (click)="submitBtn()" >Submit</button>
+                  </div>
+              </div>
+          </div>
+      </div>
+    </section>
+  
+  </div>
+  

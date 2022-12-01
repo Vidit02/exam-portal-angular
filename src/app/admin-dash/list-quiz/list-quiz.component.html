@@ -41,9 +41,9 @@
                                             <td class="text-bold-500">{{quiz.title}}</td>
                                             <td>{{quiz.sectiontitle}}</td>
                                             <td class="text-bold-500">{{quiz.sectionnum}}</td>
-                                            <td><button class="btn btn-outline-primary" >Edit</button></td>
+                                            <td><button class="btn btn-outline-primary" (click)="updateQuiz(quiz._id,quiz.title)">Edit</button></td>
                                             <td><button class="btn btn-outline-danger" (click)="deleteQuiz(quiz._id,quiz.title)" >Delete </button></td>
-                                            <td><button [ngClass]="status ? 'btn btn-success' : 'btn btn-danger'" (click)="activateQuiz()" >{{status ? 'Active' : 'Inactive'}}</button></td>
+                                            <td><button [ngClass]="quiz.status ? 'btn btn-success' : 'btn btn-danger'" (click)="activateQuiz(quiz._id , quiz.title)" >{{quiz.status ? 'Active' : 'Inactive'}}</button></td>
                                         </tr>
                                     </tbody>
                                 </table>

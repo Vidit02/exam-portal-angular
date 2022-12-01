@@ -29,8 +29,55 @@ export class ListQuizComponent implements OnInit {
 
   allquizzes : Array<any> = []
   status : Boolean = false
-  activateQuiz(){
-    this.status = !this.status
+  activateQuiz(id : any , title : any){
+    this.spin.show().then(()=>{
+      let quiz = {
+        "id" : id
+      }
+      this.quizService.findQuiz(quiz).subscribe((resp)=>{
+        this.spin.hide()
+        if(resp.status == 200){
+          if(resp.data.status == false){
+            let quizdetails = {
+              "id" : id,
+              "status" : true
+            }
+            this.spin.show().then(()=>{
+              this.quizService.updateQuizStatus(quizdetails).subscribe((resp)=>{
+                this.spin.hide()
+                if(resp.status == 200){
+                  this.toastr.success(`${title} is activated`)
+                  this.ngOnInit()
+                } else {
+                  this.toastr.error("Something is wrong")
+                  this.router.navigateByUrl("/admin/listquiz")
+                }
+              })
+            })
+          } else {
+            let quizdetails = {
+              "id" : id,
+              "status" : false
+            }
+            this.spin.show().then(()=>{
+              this.quizService.updateQuizStatus(quizdetails).subscribe((resp)=>{
+                this.spin.hide()
+                if(resp.status == 200){
+                  this.toastr.success(`${title} is inactivated`)
+                  this.ngOnInit()
+                } else {
+                  this.toastr.error("Something is wrong")
+                  this.router.navigateByUrl("/admin/listquiz")
+                }
+              })
+            })
+          }
+        } else {
+          this.toastr.error("Something is wrong" , "Error")
+          this.ngOnInit()
+        }
+      })
+    })
   }
 
   deleteQuiz(id : any , title : any){
@@ -65,5 +112,11 @@ export class ListQuizComponent implements OnInit {
         })
       }
     })
+  }
+
+  updateQuiz(id:any,title:any){
+    sessionStorage.setItem("quiztitle",title)
+    sessionStorage.setItem("quizid",id)
+    this.router.navigateByUrl("/admin/editquiz")
   }
 }

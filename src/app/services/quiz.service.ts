@@ -24,4 +24,19 @@ export class QuizService {
   deleteQuiz(quiz : any) : Observable<any>{
     return this.httpClient.post(environment.adminurl+"/deletequiz",quiz);
   }
+  
+  //find quiz api
+  findQuiz(quiz : any) : Observable<any>{
+    return this.httpClient.post(environment.adminurl+"/getquiz",quiz)
+  }
+
+  //update quiz api
+  updateQuiz(quiz : any) : Observable<any>{
+    return this.httpClient.post(environment.adminurl + "/updatequiz",quiz)
+  }
+
+  //update quiz status api
+  updateQuizStatus(quiz : any) : Observable<any>{
+    return this.httpClient.post(environment.adminurl + "/updatequizstatus",quiz)
+  }
 }

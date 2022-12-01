@@ -3,6 +3,7 @@ import { RouterModule, Routes } from '@angular/router';
 import { AddQuestionComponent } from './admin-dash/add-question/add-question.component';
 import { AddQuizComponent } from './admin-dash/add-quiz/add-quiz.component';
 import { EditCategoryComponent } from './admin-dash/edit-category/edit-category.component';
+import { EditQuizComponent } from './admin-dash/edit-quiz/edit-quiz.component';
 import { ListCategoriesComponent } from './admin-dash/list-categories/list-categories.component';
 import { ListQuizComponent } from './admin-dash/list-quiz/list-quiz.component';
 import { NewCategoryComponent } from './admin-dash/new-category/new-category.component';
@@ -77,6 +78,10 @@ const routes: Routes = [
       {
         "path" : "listquiz",
         "component" : ListQuizComponent
+      },
+      {
+        "path" : "editquiz",
+        "component" : EditQuizComponent
       }
     ]
   }
