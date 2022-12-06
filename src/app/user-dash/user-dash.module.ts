@@ -12,6 +12,10 @@ import { HomeComponent } from './home/home.component';
   ],
   imports: [
     CommonModule
+  ],
+  exports : [
+    SidebarComponent,
+    HomeComponent
   ]
 })
 export class UserDashModule { }

@@ -52,7 +52,6 @@ export class EditQuizComponent implements OnInit {
           this.category = res.data.sectiontitle
           this.numofque = res.data.sectionnum
           this.sections.length = this.category.length
-          Swal.fire("Success","Data found","success")
         } else {
           console.log(res);
           Swal.fire("Error","Data not found","error")
@@ -127,7 +126,7 @@ export class EditQuizComponent implements OnInit {
         this.spin.hide()
         if(resp.status == 200){
           Swal.fire("Success","Quiz Updated","success")
-          this.router.navigateByUrl("/admin/listcategory")
+          this.router.navigateByUrl("/admin/listquiz")
         } else if(resp.status == 401){
           Swal.fire("Error","Enter all Details","error")
         } else if(resp.status == 402){

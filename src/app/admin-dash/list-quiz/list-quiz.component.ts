@@ -28,6 +28,8 @@ export class ListQuizComponent implements OnInit {
   }
 
   allquizzes : Array<any> = []
+  titles : Array<any> = []
+  numbers : Array<any> = []
   status : Boolean = false
   activateQuiz(id : any , title : any){
     this.spin.show().then(()=>{

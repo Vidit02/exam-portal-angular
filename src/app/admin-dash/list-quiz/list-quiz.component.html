@@ -17,36 +17,32 @@
     </div>
     <section class="section">
         <div class="row" id="basic-table">
-            <div class="col-12 col-md-12">
+            <div class="col-4 col-md-4" *ngFor="let quiz of allquizzes">
                 <div class="card">
-                    <div class="card-header">
-                        <h4 class="card-title">Quizzes</h4>
-                    </div>
                     <div class="card-content">
                         <div class="card-body">
-                            <div class="table-responsive">
-                                <table class="table table-lg">
-                                    <thead>
-                                        <tr>
-                                            <th>Title</th>
-                                            <th>Sections</th>
-                                            <th>Num Of Q's</th>
-                                            <th>Edit Quiz</th>
-                                            <th>Delete Quiz</th>
-                                            <th>Quiz Status</th>
-                                        </tr>
-                                    </thead>
-                                    <tbody>
-                                        <tr *ngFor="let quiz of allquizzes" >
-                                            <td class="text-bold-500">{{quiz.title}}</td>
-                                            <td>{{quiz.sectiontitle}}</td>
-                                            <td class="text-bold-500">{{quiz.sectionnum}}</td>
-                                            <td><button class="btn btn-outline-primary" (click)="updateQuiz(quiz._id,quiz.title)">Edit</button></td>
-                                            <td><button class="btn btn-outline-danger" (click)="deleteQuiz(quiz._id,quiz.title)" >Delete </button></td>
-                                            <td><button [ngClass]="quiz.status ? 'btn btn-success' : 'btn btn-danger'" (click)="activateQuiz(quiz._id , quiz.title)" >{{quiz.status ? 'Active' : 'Inactive'}}</button></td>
-                                        </tr>
-                                    </tbody>
-                                </table>
+                            <h4 class="card-title">{{quiz.title}}</h4>
+                            <p class="card-text">
+                                {{quiz.description}}
+                            </p>
+                            <!-- <p class="card-text"><b style="color: #25396f;">Sections : </b>{{quiz.sectiontitle}}</p>
+                            <p class="card-text"><b style="color: #25396f;">Number Of Questions : </b>{{quiz.sectionnum}}</p> -->
+                            <table class="mx-auto">
+                                <tr>
+                                    <th style="padding-right: 2rem;color: #25396f;">Section</th>
+                                    <th style="color: #25396f;">Num of Q's</th>
+                                </tr>
+                                <tr *ngFor="let data  of [].constructor(quiz.sectiontitle.length); let i = index">
+                                    <td style="color: #25396f;">{{quiz.sectiontitle[i]}}</td>
+                                    <td>{{quiz.sectionnum[i]}}</td>
+                                </tr>
+                            </table>
+                            <div class="mt-3">
+                                <button class="col-md-5 btn btn-outline-primary" (click)="updateQuiz(quiz._id,quiz.title)" style="margin-left: 0.6rem;margin-right: 1.4rem;">Edit </button>
+                                <button class="col-md-5 btn btn-outline-danger" (click)="deleteQuiz(quiz._id,quiz.title)" style="margin-right: 1rem;">Delete</button>
+                            </div>
+                            <div class="mt-2">
+                                <button class="col-md-11" style="margin-left: 0.6rem;" [ngClass]="quiz.status ? 'btn btn-success' : 'btn btn-danger'" (click)="activateQuiz(quiz._id , quiz.title)" >{{quiz.status ? 'Active' : 'Inactive'}}</button>
                             </div>
                         </div>
                     </div>
@@ -55,3 +51,91 @@
         </div>
     </section>
 </div>
+
+
+<!-- <div class="row" id="basic-table">
+    <div class="col-4 col-md-4">
+        <div class="card">
+            <div class="card-header">
+                <h4 class="card-title">Quizzes</h4>
+            </div>
+            <div class="card-content">
+                <div class="card-body">
+                    <div class="table-responsive">
+                        <table class="table table-lg">
+                            <thead>
+                                <tr>
+                                    <th>Title</th>
+                                    <th>Sections</th>
+                                    <th>Num Of Q's</th>
+                                    <th>Edit Quiz</th>
+                                    <th>Delete Quiz</th>
+                                    <th>Quiz Status</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr *ngFor="let quiz of allquizzes" >
+                                    <td class="text-bold-500">{{quiz.title}}</td>
+                                    <td>{{quiz.sectiontitle}}</td>
+                                    <td class="text-bold-500">{{quiz.sectionnum}}</td>
+                                    <td><button class="btn btn-outline-primary" (click)="updateQuiz(quiz._id,quiz.title)">Edit</button></td>
+                                    <td><button class="btn btn-outline-danger" (click)="deleteQuiz(quiz._id,quiz.title)" >Delete </button></td>
+                                    <td><button [ngClass]="quiz.status ? 'btn btn-success' : 'btn btn-danger'" (click)="activateQuiz(quiz._id , quiz.title)" >{{quiz.status ? 'Active' : 'Inactive'}}</button></td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+            
+        </div>
+        <div class="card">
+            <div class="card-content">
+                <div class="card-body">
+                    <h4 class="card-title">Feedback Form</h4>
+                    <p class="card-text">
+                        Gummies bonbon apple pie fruitcake icing biscuit apple pie jelly-o sweet roll. Toffee
+                        sugar
+                        plum sugar
+                        plum jelly-o jujubes bonbon dessert carrot cake.
+                    </p>
+                    <form class="form" method="post">
+                        <div class="form-body">
+                            <div class="form-group">
+                                <label for="feedback1" class="sr-only">Name</label>
+                                <input type="text" id="feedback1" class="form-control" placeholder="Name"
+                                    name="name">
+                            </div>
+                            <div class="form-group">
+                                <label for="feedback4" class="sr-only">Last Game</label>
+                                <input type="text" id="feedback4" class="form-control" placeholder="Last Name"
+                                    name="LastName">
+                            </div>
+                            <div class="form-group">
+                                <label for="feedback2" class="sr-only">Email</label>
+                                <input type="email" id="feedback2" class="form-control" placeholder="Email"
+                                    name="email">
+                            </div>
+                            <div class="form-group">
+                                <select name="reason" class="form-control">
+                                    <option value="Inquiry">Inquiry</option>
+                                    <option value="Complain">complaints</option>
+                                    <option value="Quotation">Quotation</option>
+                                </select>
+                            </div>
+                            <div class="form-group form-label-group">
+                                <textarea class="form-control" id="label-textarea" rows="3"
+                                    placeholder="Suggestion"></textarea>
+                                <label for="label-textarea"></label>
+                            </div>
+                        </div>
+                        <div class="form-actions d-flex justify-content-end">
+                            <button type="submit" class="btn btn-primary me-1">Submit</button>
+                            <button type="reset" class="btn btn-light-primary">Cancel</button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</div> -->
