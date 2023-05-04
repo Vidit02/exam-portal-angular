@@ -15,6 +15,7 @@ import { SignupComponent } from './auth/signup/signup.component';
 import { AdminGuardGuard } from './services/admin-guard.guard';
 import { UserGuardGuard } from './services/user-guard.guard';
 import { HomeComponent } from './user-dash/home/home.component';
+import { ListQuizUserComponent } from './user-dash/list-quiz-user/list-quiz-user.component';
 import { UserdashboardComponent } from './userdashboard/userdashboard.component';
 
 const routes: Routes = [
@@ -38,6 +39,10 @@ const routes: Routes = [
       {
         "path": "",
         "component": HomeComponent
+      },
+      {
+        "path": "listquizuser",
+        "component": ListQuizUserComponent
       }
     ]
   },

@@ -1,20 +1,19 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { SidebarComponent } from './sidebar/sidebar.component';
 import { HomeComponent } from './home/home.component';
+import { ListQuizUserComponent } from './list-quiz-user/list-quiz-user.component';
 
 
 
 @NgModule({
   declarations: [
-    SidebarComponent,
-    HomeComponent
+    HomeComponent,
+    ListQuizUserComponent
   ],
   imports: [
     CommonModule
   ],
   exports : [
-    SidebarComponent,
     HomeComponent
   ]
 })

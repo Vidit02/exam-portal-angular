@@ -3,13 +3,14 @@ import {HttpClient} from '@angular/common/http';
 import { Observable } from 'rxjs';
 import { environment } from 'src/environments/environment';
 import Swal from "sweetalert2"
+import { Router } from '@angular/router';
 
 @Injectable({
   providedIn: 'root'
 })
 export class LoginService {
   
-  constructor(private httpClient:HttpClient) { }
+  constructor(private httpClient:HttpClient , private router : Router) { }
 
   //Method for login
   loginUser(user:any):Observable<any>{
@@ -32,6 +33,7 @@ export class LoginService {
   logOutUser(){
     sessionStorage.clear()
     Swal.fire("Success","Logged Out Successfully","success")
+    this.router.navigateByUrl("")
     return true
   }
 }

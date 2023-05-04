@@ -20,12 +20,14 @@ export class AddQuizComponent implements OnInit {
     "title": "",
     "description": "",
     "sectiontitle" : [""],
-    "sectionnum" : [0]
+    "sectionnum" : [0],
+    "timeforsection" : [0]
   }
 
   allcategories: String[] = []
   category: string[] = []
   numofque: number[] = []
+  timeforsec : number[] = []
   public respCategory = "";
   constructor( private quizService : QuizService , private categoryService: QuizFuncService, private toastr: ToastrService, private questionService: QuestionFuncService, private spin: NgxSpinnerService, private router: Router) { }
 
@@ -40,6 +42,8 @@ export class AddQuizComponent implements OnInit {
     // console.log(this.category);
     // console.log(this.category[0]);
     this.numofque.push()
+
+    this.timeforsec.push()
     // console.log(this.numofque);
     // if(this.category.length > 1){
     //   let word = this.category[this.category.length - 2]
@@ -65,6 +69,7 @@ export class AddQuizComponent implements OnInit {
     this.sections.pop();
     this.category.pop();
     this.numofque.pop();
+    this.timeforsec.pop();
   }
 
   getCategory() {
@@ -78,6 +83,7 @@ export class AddQuizComponent implements OnInit {
   submitBtn(){
     this.quiz.sectiontitle = this.category
     this.quiz.sectionnum = this.numofque
+    this.quiz.timeforsection = this.timeforsec
     console.log("new section titles : ",this.quiz.sectiontitle);
     if(this.quiz.title == null || this.quiz.title.trim().length == 0){
       this.toastr.error("Please Enter the quiz title")

@@ -12,10 +12,9 @@
             ><i class="bi bi-x bi-middle"></i
           ></a>
         </div>
-        
       </div>
     </div>
-    <div class="sidebar-menu">
+    <div class="sidebar-menu" *ngIf="!isUser()">
       <ul class="menu">
         <li class="sidebar-title">Menu</li>
         <li class="sidebar-item active">
@@ -30,29 +29,77 @@
             <span>My Account</span>
           </a>
         </li>
-        <li class="sidebar-title">Admin Panel</li>
+        <div>
+          <li class="sidebar-title">Admin Panel</li>
+          <li class="sidebar-item">
+            <a routerLink="addquiz" class="sidebar-link">
+              <i class="bi bi-person-badge-fill"></i>
+              <span>Add Quiz</span>
+            </a>
+          </li>
+          <li class="sidebar-item">
+            <a routerLink="listquiz" class="sidebar-link">
+              <i class="bi bi-person-badge-fill"></i>
+              <span>List Quizzes</span>
+            </a>
+          </li>
+          <li class="sidebar-item">
+            <a routerLink="newcategory" class="sidebar-link">
+              <i class="bi bi-person-badge-fill"></i>
+              <span>Add New Category</span>
+            </a>
+          </li>
+          <li class="sidebar-item">
+            <a routerLink="listcategory" class="sidebar-link">
+              <i class="bi bi-person-badge-fill"></i>
+              <span>List All Categories</span>
+            </a>
+          </li>
+        </div>
+        <li class="sidebar-title">Session Controls</li>
         <li class="sidebar-item">
-          <a routerLink="addquiz" class="sidebar-link">
+          <a routerLink="logout" (click)="logout()" class="sidebar-link">
             <i class="bi bi-person-badge-fill"></i>
-            <span>Add Quiz</span>
+            <span>Logout</span>
+          </a>
+        </li>
+      </ul>
+    </div>
+    <div class="sidebar-menu" *ngIf="isUser()">
+      <ul class="menu">
+        <li class="sidebar-title">Menu</li>
+        <li class="sidebar-item active">
+          <a href="index.html" class="sidebar-link">
+            <i class="bi bi-grid-fill"></i>
+            <span>Dashboard</span>
           </a>
         </li>
         <li class="sidebar-item">
-          <a routerLink="listquiz" class="sidebar-link">
+          <a href="index.html" class="sidebar-link">
             <i class="bi bi-person-badge-fill"></i>
-            <span>List Quizzes</span>
+            <span>My Account</span>
           </a>
         </li>
+        <div>
+          <li class="sidebar-title">User Panel</li>
+          <li class="sidebar-item">
+            <a routerLink="listquizuser" class="sidebar-link">
+              <i class="bi bi-person-badge-fill"></i>
+              <span>List Quizzes</span>
+            </a>
+          </li>
+          <li class="sidebar-item">
+            <a routerLink="addquiz" class="sidebar-link">
+              <i class="bi bi-person-badge-fill"></i>
+              <span>Show Results</span>
+            </a>
+          </li>
+        </div>
+        <li class="sidebar-title">Session Controls</li>
         <li class="sidebar-item">
-          <a routerLink="newcategory" class="sidebar-link">
+          <a routerLink="logout" (click)="logout()" class="sidebar-link">
             <i class="bi bi-person-badge-fill"></i>
-            <span>Add New Category</span>
-          </a>
-        </li>
-        <li class="sidebar-item">
-          <a routerLink="listcategory" class="sidebar-link">
-            <i class="bi bi-person-badge-fill"></i>
-            <span>List All Categories</span>
+            <span>Logout</span>
           </a>
         </li>
       </ul>

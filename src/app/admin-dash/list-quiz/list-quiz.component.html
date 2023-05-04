@@ -30,11 +30,13 @@
                             <table class="mx-auto">
                                 <tr>
                                     <th style="padding-right: 2rem;color: #25396f;">Section</th>
-                                    <th style="color: #25396f;">Num of Q's</th>
+                                    <th style="color: #25396f;margin-right: 2rem;">Num of Q's</th>
+                                    <th style="color: #25396f;">Time</th>
                                 </tr>
                                 <tr *ngFor="let data  of [].constructor(quiz.sectiontitle.length); let i = index">
                                     <td style="color: #25396f;">{{quiz.sectiontitle[i]}}</td>
                                     <td>{{quiz.sectionnum[i]}}</td>
+                                    <td>{{quiz.sectiontime[i]}}</td>
                                 </tr>
                             </table>
                             <div class="mt-3">

@@ -51,11 +51,16 @@
                                 <option *ngFor="let item of allcategories;let n = index" value="{{item}}">{{item}}</option>
                             </select>
                         </div>
-                        <div class="input-group">
+                        <div class="input-group mb-3">
                             <label class="input-group-text" for="">&nbsp; Number Of Questions &nbsp;&nbsp;</label>
                             <input class="form-control" [(ngModel)]="numofque[num]" type="number" />
                         </div>
+                        <div class="input-group">
+                            <label class="input-group-text" for="">&nbsp; Max Time (In Mins) &nbsp;&nbsp;</label>
+                            <input class="form-control" [(ngModel)]="timeforsec[num]" type="number" />
+                        </div>
                     </div>
+
                 </div>
 
                 <div class="col-sm-12 text-center">
