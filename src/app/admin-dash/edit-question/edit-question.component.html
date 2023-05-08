@@ -1,0 +1,109 @@
+<div class="page-heading">
+  <div class="page-title">
+    <div class="row">
+      <div class="col-12 col-md-6 order-md-1 order-last">
+        <h3>Edit Question</h3>
+        <p class="text-subtitle text-muted">
+          Edit Question to
+        </p>
+      </div>
+      <div class="col-12 col-md-6 order-md-2 order-first">
+        <nav aria-label="breadcrumb" class="breadcrumb-header float-start float-lg-end">
+          <ol class="breadcrumb">
+            <li class="breadcrumb-item"><a href="index.html">Questions</a></li>
+            <li class="breadcrumb-item"><a href="index.html">{{title}}</a></li>
+            <li class="breadcrumb-item active" aria-current="page">Edit Question</li>
+          </ol>
+        </nav>
+      </div>
+    </div>
+  </div>
+  <section class="section">
+    <div class="card">
+      <div class="card-header">
+        <h4 class="card-title">Edit Question</h4>
+      </div>
+      <div class="card-body">
+        <div class="col-sm-12">
+          <p>Write Your Question here </p>
+          <section class="section">
+            <div class="row">
+              <div class="col-12">
+                <div class="card">
+                  <div class="card-body">
+                    <textarea class="form-control" rows="4" [(ngModel)]="questionDetails.question"></textarea>
+                    <div class="row mt-4">
+                      <div class="col-md-5">
+                        <div class="input-group mb-3">
+                          <span class="input-group-text" id="basic-addon1">A</span>
+                          <input type="text" class="form-control" [(ngModel)]="questionDetails.optionA"
+                            placeholder="Enter First Option" aria-label="Username" aria-describedby="basic-addon1">
+                        </div>
+                      </div>
+                    </div>
+                    <div class="row mt-1">
+                      <div class="col-md-5">
+                        <div class="input-group mb-3">
+                          <span class="input-group-text" id="basic-addon1">B</span>
+                          <input type="text" class="form-control" [(ngModel)]="questionDetails.optionB"
+                            placeholder="Enter Second Option" aria-label="Username" aria-describedby="basic-addon1">
+                        </div>
+                      </div>
+                      <div class="col-md-5">
+                        <div class="input-group mb-3">
+                          <label class="input-group-text" for="inputGroupSelect01">Difficulty</label>
+                          <select class="form-select" id="inputGroupSelect01" [(ngModel)]="questionDetails.difficulty">
+                            <option selected>Choose...</option>
+                            <option value="1">Easy</option>
+                            <option value="2">Hard</option>
+                            <option value="3">Very Hard</option>
+                            <option value="4">Extreme Difficult</option>
+                          </select>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="row mt-1">
+                      <div class="col-md-5">
+                        <div class="input-group mb-3">
+                          <span class="input-group-text" id="basic-addon1">C</span>
+                          <input type="text" class="form-control" [(ngModel)]="questionDetails.optionC"
+                            placeholder="Enter Third Option" aria-label="Username" aria-describedby="basic-addon1">
+                        </div>
+                      </div>
+                      <div class="col-md-5">
+                        <div class="input-group mb-3">
+                          <label class="input-group-text" for="inputGroupSelect01">Answer &nbsp;</label>
+                          <select class="form-select" id="inputGroupSelect01" [(ngModel)]="questionDetails.correctAns">
+                            <option selected>Choose...</option>
+                            <option value={{questionDetails.optionA}}>A</option>
+                            <option value={{questionDetails.optionB}}>B</option>
+                            <option value={{questionDetails.optionC}}>C</option>
+                            <option value={{questionDetails.optionD}}>D</option>
+                          </select>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="row mt-1">
+                      <div class="col-md-5">
+                        <div class="input-group mb-3">
+                          <span class="input-group-text" id="basic-addon1">D</span>
+                          <input type="text" class="form-control" [(ngModel)]="questionDetails.optionD"
+                            placeholder="Enter Fourth Option" aria-label="Username" aria-describedby="basic-addon1">
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </section>
+        </div>
+        <div class="col-sm-12">
+          <button type="submit" class="btn btn-primary" (click)="updateBtn()">Edit Question</button>
+        </div>
+
+      </div>
+
+    </div>
+  </section>
+</div>

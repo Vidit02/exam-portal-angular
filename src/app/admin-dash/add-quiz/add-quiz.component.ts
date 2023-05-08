@@ -21,7 +21,7 @@ export class AddQuizComponent implements OnInit {
     "description": "",
     "sectiontitle" : [""],
     "sectionnum" : [0],
-    "timeforsection" : [0]
+    "sectiontime" : [0]
   }
 
   allcategories: String[] = []
@@ -83,7 +83,7 @@ export class AddQuizComponent implements OnInit {
   submitBtn(){
     this.quiz.sectiontitle = this.category
     this.quiz.sectionnum = this.numofque
-    this.quiz.timeforsection = this.timeforsec
+    this.quiz.sectiontime = this.timeforsec
     console.log("new section titles : ",this.quiz.sectiontitle);
     if(this.quiz.title == null || this.quiz.title.trim().length == 0){
       this.toastr.error("Please Enter the quiz title")

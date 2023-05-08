@@ -72,6 +72,11 @@ export class ShowCategoryComponent implements OnInit {
     sessionStorage.setItem("categoryid",this.category._id)
     this.router.navigateByUrl("/admin/addquestion")
   }
+
+  updateQuestion(id: any){
+    sessionStorage.setItem("questionid",id)
+    this.router.navigateByUrl("/admin/editquestion")
+  }
   
 
 }

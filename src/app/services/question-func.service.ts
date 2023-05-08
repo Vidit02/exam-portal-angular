@@ -23,4 +23,17 @@ export class QuestionFuncService {
     }
     return this.httpClient.post(environment.adminurl+"/showquestions",titlobj)
   }
+
+  //Method for finding a particular question
+  findQuestion(questionid:any) : Observable<any>{
+    const question = {
+      "questionId" : questionid
+    }
+    return this.httpClient.post(environment.adminurl+"/getquestion",question)
+  }
+
+  //Method for updating a particular question
+  updateQuestion(question : any) : Observable<any>{
+    return this.httpClient.post(environment.adminurl+"/updatequestion",question)
+  }
 }

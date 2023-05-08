@@ -32,7 +32,7 @@
                         <div class="row">
                             <p class="col-md-4">A) {{q.optionA}}</p>
                             <p class="col-md-4">B) {{q.optionB}}</p>
-                            <button class="btn btn-outline-info col-md-2">Edit Question </button>
+                            <button class="btn btn-outline-info col-md-2" (click)="updateQuestion(q._id)">Edit Question </button>
                         </div>
                         <div class="row mt-1">
                             <p class="col-md-4">C) {{q.optionC}}</p>

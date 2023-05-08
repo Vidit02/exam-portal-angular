@@ -17,6 +17,7 @@ import { UserGuardGuard } from './services/user-guard.guard';
 import { HomeComponent } from './user-dash/home/home.component';
 import { ListQuizUserComponent } from './user-dash/list-quiz-user/list-quiz-user.component';
 import { UserdashboardComponent } from './userdashboard/userdashboard.component';
+import { EditQuestionComponent } from './admin-dash/edit-question/edit-question.component';
 
 const routes: Routes = [
   {
@@ -87,6 +88,10 @@ const routes: Routes = [
       {
         "path" : "editquiz",
         "component" : EditQuizComponent
+      },
+      {
+        "path" : "editquestion",
+        "component" : EditQuestionComponent
       }
     ]
   }

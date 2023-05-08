@@ -12,6 +12,7 @@ import { ShowCategoryComponent } from './show-category/show-category.component';
 import { AddQuestionComponent } from './add-question/add-question.component';
 import { ListQuizComponent } from './list-quiz/list-quiz.component';
 import { EditQuizComponent } from './edit-quiz/edit-quiz.component';
+import { EditQuestionComponent } from './edit-question/edit-question.component';
 
 
 @NgModule({
@@ -25,7 +26,8 @@ import { EditQuizComponent } from './edit-quiz/edit-quiz.component';
     ShowCategoryComponent,
     AddQuestionComponent,
     ListQuizComponent,
-    EditQuizComponent
+    EditQuizComponent,
+    EditQuestionComponent
   ],
   imports: [
     CommonModule,
